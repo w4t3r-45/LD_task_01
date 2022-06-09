@@ -101,6 +101,7 @@ export const SideMenu: React.FC<SideMenuType> = ({
                 childs={item.childs}
                 isSelected={selected === index}
                 isDrawerOpened={open}
+                setIsDrawerOpened={setOpen}
               />
             </div>
           )) ||
