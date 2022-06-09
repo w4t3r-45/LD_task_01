@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Box, Badge, Typography } from "@mui/material";
 import { SideMenuItemType } from "../@types/drawerRelatedTypes";
 import { ARROW_DOWN_PATH, ARROW_UP_PATH } from "../helpers/iconsPaths";
-import { ArrowDownIcon } from "./icons";
 
 export const SideMenuItem: React.FC<SideMenuItemType> = ({
   title,
