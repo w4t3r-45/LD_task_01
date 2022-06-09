@@ -12,11 +12,13 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
   route,
   isSelected,
   isDrawerOpened,
+  setIsDrawerOpened,
 }: SideMenuItemType) => {
   // state for showing subitems
   const [showSubItems, setShowSubItems] = useState(false);
 
   const handleExpandSubItems = () => {
+    !isDrawerOpened && setIsDrawerOpened(true);
     setShowSubItems(!showSubItems);
   };
 
