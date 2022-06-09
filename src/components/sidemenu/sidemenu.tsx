@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, IconButton, Divider } from "@mui/material";
-import { DrawerStyle } from "../../styles/muiCustomStyles";
 import { LOGO_PATH } from "../../helpers/iconsPaths";
 import { MenuIcon2 } from "../icons";
 import { SIDE_MENU_CONFIG } from "./SIDE_MENU_CONFIG";
@@ -11,7 +10,7 @@ import { SideMenuItem } from "../sidemenuItem";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 
-const drawerWidth = 240;
+const drawerWidth = 255;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
