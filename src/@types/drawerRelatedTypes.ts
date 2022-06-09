@@ -10,6 +10,7 @@ export type SideMenuItemType = {
   childs?: MIT_Child[];
   route?: string;
   isDrawerOpened: boolean;
+  setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
 };
 
 type MIT_Child = {
