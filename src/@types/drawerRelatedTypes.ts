@@ -11,6 +11,8 @@ export type SideMenuItemType = {
   route?: string;
   isDrawerOpened: boolean;
   setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
+  setShowSubItems: Dispatch<SetStateAction<boolean>>;
+  showSubItems: boolean;
 };
 
 type MIT_Child = {

@@ -52,8 +52,11 @@ const Drawer = styled(MuiDrawer, {
 
 const handleDrwrStatus = (
   open: boolean,
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  showSubItems: boolean,
+  setShowSubItems: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
+  showSubItems && setShowSubItems(!showSubItems);
   setOpen(!open);
 };
 
@@ -66,6 +69,9 @@ export const SideMenu: React.FC<SideMenuType> = ({
   // set the selected item to map index "to change its color" (in reality we use route path and another indicator)
   const [selected, setSelected] = useState(0);
 
+  // hoisted state for showing subitems
+  const [showSubItems, setShowSubItems] = useState(false);
+
   return (
     <Drawer variant="permanent" open={open}>
       {/* drawer header */}
@@ -77,7 +83,9 @@ export const SideMenu: React.FC<SideMenuType> = ({
       >
         {open && <img src={LOGO_PATH} alt="website logo" />}
         <IconButton
-          onClick={() => handleDrwrStatus(open, setOpen)}
+          onClick={() =>
+            handleDrwrStatus(open, setOpen, showSubItems, setShowSubItems)
+          }
           aria-label="close sidemenu"
           disableRipple
         >
@@ -102,6 +110,8 @@ export const SideMenu: React.FC<SideMenuType> = ({
                 isSelected={selected === index}
                 isDrawerOpened={open}
                 setIsDrawerOpened={setOpen}
+                showSubItems={showSubItems}
+                setShowSubItems={setShowSubItems}
               />
             </div>
           )) ||

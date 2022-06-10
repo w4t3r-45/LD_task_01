@@ -13,13 +13,13 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
   isSelected,
   isDrawerOpened,
   setIsDrawerOpened,
+  setShowSubItems,
+  showSubItems,
 }: SideMenuItemType) => {
-  // state for showing subitems
-  const [showSubItems, setShowSubItems] = useState(false);
-
   const handleExpandSubItems = () => {
     !isDrawerOpened && setIsDrawerOpened(true);
-    setShowSubItems(!showSubItems);
+    setShowSubItems(true);
+    showSubItems && isSelected && setShowSubItems(false);
   };
 
   return (
@@ -74,7 +74,9 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
           )) ||
             (childs && isDrawerOpened && (
               <img
-                src={showSubItems ? ARROW_UP_PATH : ARROW_DOWN_PATH}
+                src={
+                  showSubItems && isSelected ? ARROW_UP_PATH : ARROW_DOWN_PATH
+                }
                 alt="expand menu item icon"
                 width="11.67px"
                 height="6.67px"
@@ -86,7 +88,7 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
       {/* subItems */}
       {childs && (
         <Box
-          display={showSubItems ? "flex" : "none"}
+          display={showSubItems && isSelected ? "flex" : "none"}
           flexDirection="column"
           sx={{
             marginLeft: "59px",
