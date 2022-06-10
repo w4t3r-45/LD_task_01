@@ -46,13 +46,18 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
           <Box display="flex" justifyContent="center" alignItems="center">
             <Icon
               color={isSelected && "#21B8F9"}
-              style={{ marginRight: "16px", width: "20px", height: "20px" }}
+              style={{
+                marginRight: "16px",
+                width: "20px",
+                height: "20px",
+              }}
             />
             {isDrawerOpened && (
               <Typography
                 fontSize="14px"
                 sx={{
                   color: isSelected ? "#21B8F9" : theme.palette.text.primary,
+                  userSelect: "none",
                 }}
               >
                 {title}
@@ -84,7 +89,7 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
                 alt="expand menu item icon"
                 width="11.67px"
                 height="6.67px"
-                style={{ marginRight: "16px" }}
+                style={{ marginRight: "16px", userSelect: "none" }}
               />
             ))}
         </Box>
@@ -106,7 +111,9 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
                 marginBottom: "20px",
               }}
             >
-              <Typography fontSize="14px">{item.title}</Typography>
+              <Typography fontSize="14px" sx={{ userSelect: "none" }}>
+                {item.title}
+              </Typography>
             </Box>
           ))}
         </Box>
