@@ -10,6 +10,9 @@ export const OwnTheme = createTheme({
       main: "#00C48C",
       contrastText: "#fff",
     },
+    text: {
+      primary: "#233B53",
+    },
   },
   typography: {
     fontFamily: '"Noto Sans HK" , "Helevetica" , "Arial" , sans-serif ',
