@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Box } from "@mui/material";
-import { SideMenu } from "../components/sidemenu/sidemenu";
+import { SideMenu } from "../components/sidemenu";
 
 export const Dashboard = () => {
   const [open, setOpen] = useState(true);

@@ -18,7 +18,7 @@ export const CustomSelect: React.FC<SelectBoxType> = ({
   const [value, setSvalue] = useState(data[0]);
 
   return (
-    <Box sx={{ padding: "0 20px" }}>
+    <Box sx={{ padding: "0 20px", marginBottom: "2rem" }}>
       <FormControl
         fullWidth
         sx={{
