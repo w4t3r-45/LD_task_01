@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, MenuItem, FormControl, Typography } from "@mui/material";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { SelectMenuProps } from "../styles/muiCustomStyles";
 import { SelectBoxType } from "../@types/selectBoxType";
 
 const handleChange = (
@@ -41,8 +40,6 @@ export const CustomSelect: React.FC<SelectBoxType> = ({
             handleChange(event, setSvalue)
           }
           value={value}
-          MenuProps={SelectMenuProps}
-          // inputProps={{ "aria-label": "Without label" }}
         >
           {data.map((item) => (
             <MenuItem value={item} sx={{ minWidth: "115px" }}>
