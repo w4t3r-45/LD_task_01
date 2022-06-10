@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Badge, Typography } from "@mui/material";
+import { Box, Badge, Typography, useTheme } from "@mui/material";
 import { SideMenuItemType } from "../@types/drawerRelatedTypes";
 import { ARROW_DOWN_PATH, ARROW_UP_PATH } from "../helpers/iconsPaths";
 
@@ -16,6 +16,8 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
   setShowSubItems,
   showSubItems,
 }: SideMenuItemType) => {
+  // accessing theme
+  const theme = useTheme();
   const handleExpandSubItems = () => {
     !isDrawerOpened && setIsDrawerOpened(true);
     setShowSubItems(true);
@@ -49,7 +51,9 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
             {isDrawerOpened && (
               <Typography
                 fontSize="14px"
-                sx={{ color: isSelected ? "#21B8F9" : "#000" }}
+                sx={{
+                  color: isSelected ? "#21B8F9" : theme.palette.text.primary,
+                }}
               >
                 {title}
               </Typography>
