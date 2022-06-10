@@ -14,6 +14,11 @@ export const OwnTheme = createTheme({
       primary: "#233B53",
     },
   },
+  mixins: {
+    toolbar: {
+      minHeight: 60,
+    },
+  },
   typography: {
     fontFamily: '"Noto Sans HK" , "Helevetica" , "Arial" , sans-serif ',
   },
