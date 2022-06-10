@@ -1,11 +1,13 @@
 import React from "react";
 import { HeaderType } from "../@types/headerTypes";
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Box, useTheme } from "@mui/material";
 
 export const Header: React.FC<HeaderType> = ({
   title,
   isDrawerOpened,
 }: HeaderType) => {
+  // access MUI theme
+  const theme = useTheme();
   return (
     <AppBar
       elevation={0}
@@ -22,7 +24,12 @@ export const Header: React.FC<HeaderType> = ({
             transition: "all 200ms ease-out",
           }}
         >
-          <Typography variant="body1" color="ThreeDShadow">
+          <Typography
+            variant="body1"
+            fontSize="17px"
+            fontWeight="500"
+            color={theme.palette.text.secondary}
+          >
             {title}
           </Typography>
         </Box>

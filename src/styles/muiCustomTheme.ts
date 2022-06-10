@@ -12,6 +12,7 @@ export const OwnTheme = createTheme({
     },
     text: {
       primary: "#233B53",
+      secondary: "#103B66",
     },
   },
   mixins: {
