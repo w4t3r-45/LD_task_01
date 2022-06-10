@@ -27,8 +27,8 @@ export const CustomSelect: React.FC<SelectBoxType> = ({
             borderRadius: "5px",
             width: "215px",
             height: "50px",
-            fontSize: "1rem",
-            fontWeight: 500,
+            fontSize: "14px",
+            fontWeight: 400,
           },
         }}
       >
