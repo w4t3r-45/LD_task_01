@@ -41,8 +41,12 @@ export const CustomSelect: React.FC<SelectBoxType> = ({
           }
           value={value}
         >
-          {data.map((item) => (
-            <MenuItem value={item} sx={{ minWidth: "115px" }}>
+          {data.map((item, index) => (
+            <MenuItem
+              key={`mitem${index}`}
+              value={item}
+              sx={{ minWidth: "115px" }}
+            >
               {item}
             </MenuItem>
           ))}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Badge, Typography, useTheme } from "@mui/material";
-import { SideMenuItemType } from "../@types/drawerRelatedTypes";
-import { ARROW_DOWN_PATH, ARROW_UP_PATH } from "../helpers/iconsPaths";
+import { SideMenuItemType } from "../../@types/drawerRelatedTypes";
+import { ARROW_DOWN_PATH, ARROW_UP_PATH } from "../../helpers/iconsPaths";
 
 export const SideMenuItem: React.FC<SideMenuItemType> = ({
   title,
@@ -105,8 +105,9 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
             bgcolor: "#E9F8FE",
           }}
         >
-          {childs.map((item) => (
+          {childs.map((item, index) => (
             <Box
+              key={`child${index}`}
               sx={{
                 marginBottom: "20px",
               }}

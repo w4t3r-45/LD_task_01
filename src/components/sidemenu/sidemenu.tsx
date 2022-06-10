@@ -4,7 +4,7 @@ import { LOGO_PATH } from "../../helpers/iconsPaths";
 import { MenuIcon2 } from "../icons";
 import { SIDE_MENU_CONFIG } from "./SIDE_MENU_CONFIG";
 import { SideMenuType } from "../../@types/drawerRelatedTypes";
-import { SideMenuItem } from "../sidemenuItem";
+import { SideMenuItem } from "./sidemenuItem";
 import { CustomSelect } from "../CustomSelect";
 // ############################################
 import { styled, Theme, CSSObject } from "@mui/material/styles";
@@ -98,9 +98,8 @@ export const SideMenu: React.FC<SideMenuType> = ({
             <Divider key={`devid${index}`} sx={{ margin: "20px 0" }} />
           )) ||
           (item.isMenuItem && (
-            <div onClick={() => setSelected(index)}>
+            <div onClick={() => setSelected(index)} key={`MItemWrpr${index}`}>
               <SideMenuItem
-                key={`MItem${index}`}
                 title={item.title || ""}
                 Icon={item.Icon}
                 hasBadge={item.hasBadge}
@@ -116,7 +115,7 @@ export const SideMenu: React.FC<SideMenuType> = ({
             </div>
           )) ||
           (item.isSelect && open && (
-            <Box key={`hello${index}`} style={{ marginTop: "60px" }}>
+            <Box key={`slctwrapr${index}`} style={{ marginTop: "60px" }}>
               <CustomSelect title={item.title} data={item.items} />
             </Box>
           ))
