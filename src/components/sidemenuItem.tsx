@@ -91,13 +91,14 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
           display={showSubItems && isSelected ? "flex" : "none"}
           flexDirection="column"
           sx={{
-            marginLeft: "59px",
+            paddingLeft: "59px",
             paddingTop: "20px",
+            bgcolor: "#E9F8FE",
           }}
         >
           {childs.map((item) => (
             <Box
-              style={{
+              sx={{
                 marginBottom: "20px",
               }}
             >
