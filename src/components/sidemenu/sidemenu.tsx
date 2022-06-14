@@ -5,7 +5,7 @@ import { MenuIcon2 } from "../icons";
 import { SIDE_MENU_CONFIG } from "./SIDE_MENU_CONFIG";
 import { SideMenuType } from "../../@types/drawerRelatedTypes";
 import { SideMenuItem } from "./sidemenuItem";
-import { CustomSelect } from "../CustomSelect";
+import { CustomSelect } from "../CustomSelect/CustomSelect";
 // ############################################
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
