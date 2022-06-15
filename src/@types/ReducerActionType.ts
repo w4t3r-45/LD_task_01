@@ -31,22 +31,17 @@ export type API_1_RESP = {
 };
 
 export type API_2_RESP = {
-  status: string;
-  code: number;
-  total: number;
-  data: {
-    id: number;
-    uuid: string;
-    firstname: string;
-    lastname: string;
-    username: string;
-    password: string;
-    email: string;
-    ip: string;
-    macAddress: string;
-    website: string;
-    image: string;
-  }[];
+  id: number;
+  uuid: string;
+  firstname: string;
+  lastname: string;
+  username: string;
+  password: string;
+  email: string;
+  ip: string;
+  macAddress: string;
+  website: string;
+  image: string;
 };
 
 export type ReducerActionType = {

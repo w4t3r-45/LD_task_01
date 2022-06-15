@@ -9,8 +9,8 @@ export const NewsItem: React.FC<NewsItemType> = ({
   url,
 }: NewsItemType) => {
   return (
-    <Box display="flex" margin={2} flexBasis="20%">
-      <img src="#" alt="news item image" width="100px" height="100px" />
+    <Box display="flex" margin={2} sx={{ minWidth: "300px" }}>
+      <img src={imgUrl} alt="news item image" width="100px" height="100px" />
       <Box display="flex" flexDirection="column" marginLeft="16px">
         <Typography
           fontWeight={500}
@@ -18,12 +18,16 @@ export const NewsItem: React.FC<NewsItemType> = ({
           color="#21B8F9"
           textTransform="uppercase"
         >
-          Hello this is category
+          {category}
         </Typography>
         <Typography fontWeight={500} fontSize="15px">
-          Hello this is content
+          {content}
         </Typography>
-        <Link href="#" sx={{ fontSize: "12px", fontWeight: 300 }}>
+        <Link
+          href={url}
+          target="_blank"
+          sx={{ fontSize: "12px", fontWeight: 300, justifySelf: "flex-end" }}
+        >
           go to link 😊
         </Link>
       </Box>

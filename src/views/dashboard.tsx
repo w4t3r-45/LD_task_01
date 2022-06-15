@@ -4,6 +4,7 @@ import { SideMenu } from "../components/sidemenu";
 import { Header } from "../components/Header/header";
 import { DashboardWelcome } from "../components/DashboardWelcome/dashboardWelcome";
 import { CardsContainer } from "../components/CardsContainer/cardsContainer";
+import { ExtensionsContextProvider, NewsContextProvider } from "../CONTEXT";
 
 export const Dashboard = () => {
   const [open, setOpen] = useState(true);
@@ -24,7 +25,11 @@ export const Dashboard = () => {
       >
         <div style={{ height: "60px" }} />
         <DashboardWelcome />
-        <CardsContainer />
+        <NewsContextProvider>
+          <ExtensionsContextProvider>
+            <CardsContainer />
+          </ExtensionsContextProvider>
+        </NewsContextProvider>
       </Box>
     </Box>
   );

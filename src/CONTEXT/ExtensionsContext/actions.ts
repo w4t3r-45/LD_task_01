@@ -7,7 +7,8 @@ import { useExtensionContext } from "./context";
 import { API__1_FETCH_DATA } from "../../API_REQUESTORS/API__1";
 
 export const useExtensionAction = () => {
-  const { INIT_STATE, dispatch } = useExtensionContext();
+  // const { INIT_STATE, dispatch } = useExtensionContext();
+  const { dispatch } = useExtensionContext();
   // fetchi data
   const Exts__data_fetch = async () => {
     dispatch({
