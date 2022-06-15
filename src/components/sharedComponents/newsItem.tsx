@@ -9,7 +9,7 @@ export const NewsItem: React.FC<NewsItemType> = ({
   url,
 }: NewsItemType) => {
   return (
-    <Box display="flex" margin={2} sx={{ minWidth: "300px" }}>
+    <Box display="flex" margin={2} sx={{ width: "300px" }}>
       <img src={imgUrl} alt="news item image" width="100px" height="100px" />
       <Box display="flex" flexDirection="column" marginLeft="16px">
         <Typography
