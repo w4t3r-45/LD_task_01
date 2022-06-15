@@ -1,5 +1,5 @@
-import { DispatchWithoutAction } from "react";
-import { API_1_RESP, API_2_RESP } from "./ReducerActionType";
+import { Dispatch } from "react";
+import { API_1_RESP, API_2_RESP, ReducerActionType } from "./ReducerActionType";
 
 export type ExtensionContextType = {
   INIT_STATE: {
@@ -7,5 +7,5 @@ export type ExtensionContextType = {
     ext__fetch_failed: boolean;
     ext__data: Partial<API_1_RESP | API_2_RESP>[] | null;
   };
-  dispatch: DispatchWithoutAction;
+  dispatch: Dispatch<ReducerActionType>;
 };

@@ -5,5 +5,5 @@ export const API__1_FETCH_DATA = () => {
     params: {
       size: 30,
     },
-  }).then((res) => console.log(res));
+  }).then((res) => res);
 };
