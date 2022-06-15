@@ -45,7 +45,7 @@ export const CardsContainer = () => {
         }}
       >
         {LEFT_CARDS.map((Card, index) => (
-          <Grid item md={index === 4 ? 12 : 6} xs={12}>
+          <Grid item md={index === 4 ? 12 : 6} xs={12} key={`card${index}`}>
             <Card />
           </Grid>
         ))}
@@ -60,8 +60,8 @@ export const CardsContainer = () => {
           alignContent: "flex-start",
         }}
       >
-        {RIGHT_CARDS.map((Card) => (
-          <Grid item xs={12}>
+        {RIGHT_CARDS.map((Card, index) => (
+          <Grid item xs={12} key={`card2${index}`}>
             <Card />
           </Grid>
         ))}

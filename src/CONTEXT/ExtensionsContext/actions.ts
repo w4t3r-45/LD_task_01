@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import {
   EXTS__DATA_FETCHED,
   EXTS__DATA_FETCHING,
@@ -15,14 +16,13 @@ export const useExtensionAction = () => {
     });
     try {
       const response = await API__1_FETCH_DATA();
-      console.log("🤣🤣🤣", response);
       dispatch({
         type: EXTS__DATA_FETCHED,
-        payload: response.data,
+        payload: response?.data,
       });
-      console.log("😍😍😍", dispatch, INIT_STATE);
     } catch (err) {
       console.log(err);
+
       dispatch({
         type: EXTS__FETCH_FAILED,
       });

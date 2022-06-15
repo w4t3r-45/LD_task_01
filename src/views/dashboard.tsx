@@ -9,7 +9,6 @@ export const Dashboard = () => {
   const [open, setOpen] = useState(true);
   useEffect(() => {
     setOpen(true);
-    console.dir(SideMenu);
   }, []);
 
   return (

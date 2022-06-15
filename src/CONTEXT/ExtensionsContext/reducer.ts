@@ -30,12 +30,12 @@ export const ExtensionReducer = (
         },
       };
     case EXTS__DATA_FETCHED:
-      console.log("EXTS__DATA_FETCHED REACHED", action.payload);
       return {
         ...state,
         INIT_STATE: {
           ...state.INIT_STATE,
           ext__is_data_fetched: true,
+          ext__fetch_failed: false,
           ext__data: [...action.payload!] as any,
         },
       };
@@ -44,7 +44,7 @@ export const ExtensionReducer = (
         ...state,
         INIT_STATE: {
           ...state.INIT_STATE,
-          ext__fetch_failed: false,
+          ext__fetch_failed: true,
         },
       };
     default:
