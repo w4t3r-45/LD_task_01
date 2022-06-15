@@ -30,9 +30,7 @@ export const ExtensionsContextProvider = ({ children }: any) => {
   return (
     <ExtensionContext.Provider
       // value={{ INIT_STATE: { ...INIT_STATE.INIT_STATE }, dispatch: dispatch }}
-      value={{
-        ...StateValue,
-      }}
+      value={StateValue}
     >
       {children}
     </ExtensionContext.Provider>

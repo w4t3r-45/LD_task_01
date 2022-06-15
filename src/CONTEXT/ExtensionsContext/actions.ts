@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import {
   EXTS__DATA_FETCHED,
   EXTS__DATA_FETCHING,
