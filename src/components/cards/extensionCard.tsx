@@ -9,7 +9,7 @@ import { useExtensionAction } from "../../CONTEXT/ExtensionsContext/actions";
 import { toast } from "react-toastify";
 
 export const ExtensionCard = () => {
-  const { INIT_STATE, dispatch } = useExtensionContext();
+  const { INIT_STATE } = useExtensionContext();
   const { Exts__data_fetch } = useExtensionAction();
   useEffect(() => {
     Exts__data_fetch();
