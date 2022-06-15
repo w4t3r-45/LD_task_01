@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Lasting Dynamics - ASSESMENT*01*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Preview
 
-## Available Scripts
+- this app was deployed using **Vercel** , can be accessed [here](https://lasting-dynamics-task1.vercel.app/)
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+```bash
+git clone https://github.com/w4t3r-45/LD_task_01
+cd LD_task_01
+npm install
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Remarks
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Components :
 
-### `npm test`
+- Material UI **v5.8** was used for making all components.
+- styling was passed using **sx** prop provided by MUI , there are other methods like **makeStyles** for some nice looking code that can be used or making customization from a custom theme that we need to create using **createTheme**.
+- a basic custom theme was created to customize some basic properties (colors , Toolbar height , fontFamily ...).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### State Management
 
-### `npm run build`
+- **useState + useDispatch** technique was used to manage state since we don't have too much to worry about , it definetly gives a performant state management for such apps (Nearly like redux)
+- redux could be used for state management but it's not the right app to be in the used technique can handle some **small ~ mid** apps perfectly.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Good Additions to have :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- i prefer to make a custom library for the Icons using **Storybook** then publish it on npm and work with it as a hosted package instead of having those icons in our code.
+- sometimes making custom libraries for the whole components **(when we have too much customization)** will be super useful when time passes since it makes updates super easy in the future.
