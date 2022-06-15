@@ -8,7 +8,6 @@ import { API__1_FETCH_DATA } from "../../API_REQUESTORS/API__1";
 
 export const useExtensionAction = () => {
   const { INIT_STATE, dispatch } = useExtensionContext();
-  console.log("❤️❤️❤️❤️", dispatch);
   // fetchi data
   const Exts__data_fetch = async () => {
     dispatch({
@@ -20,6 +19,7 @@ export const useExtensionAction = () => {
       type: EXTS__DATA_FETCHED,
       payload: response.data,
     });
+    console.log("😍😍😍", dispatch, INIT_STATE);
   };
   return {
     Exts__data_fetch,

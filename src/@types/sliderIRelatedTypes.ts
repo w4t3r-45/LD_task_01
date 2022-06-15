@@ -1,12 +1,11 @@
-import React from "react";
-import { IconType } from "./iconType";
+import { API_1_RESP, API_2_RESP } from "./ReducerActionType";
 
 export type SliderType = {
-  data: SliderItemType[];
+  data: API_1_RESP[] | null | undefined;
 };
 
 export type SliderItemType = {
-  TopChild: React.FC<IconType>;
-  title: string;
-  bgcolor: string;
+  imgLink: string;
+  firstName: string;
+  lastName: string;
 };

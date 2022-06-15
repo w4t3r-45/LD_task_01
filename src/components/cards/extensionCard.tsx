@@ -11,13 +11,13 @@ export const ExtensionCard = () => {
   const { INIT_STATE, dispatch } = useExtensionContext();
   const { Exts__data_fetch } = useExtensionAction();
   useEffect(() => {
-    // console.log("OUUUUUUUUUUUUUUUUUUUUUTSIDE", dispatch, INIT_STATE);
+    console.log("OUUUUUUUUUUUUUUUUUUUUUTSIDE", dispatch, INIT_STATE);
     Exts__data_fetch();
   }, []);
   return (
     <BaseCard
       HeaderIcon={NewAppIcon}
-      title={`${INIT_STATE.ext__is_data_fetched} Extensions Marketplace`}
+      title="Extensions Marketplace"
       CardBody={
         <div
           style={{
@@ -27,7 +27,7 @@ export const ExtensionCard = () => {
             minWidth: 0,
           }}
         >
-          <Slider data={SLIDER_DATA_MOCK} />
+          <Slider data={INIT_STATE.ext__data as any} />
         </div>
       }
       CardFooter={

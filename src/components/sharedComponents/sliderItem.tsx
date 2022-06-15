@@ -1,11 +1,11 @@
 import React from "react";
-import { Typography, Box, Link } from "@mui/material";
+import { Typography, Box, Skeleton } from "@mui/material";
 import { SliderItemType } from "../../@types/sliderIRelatedTypes";
 
 export const SliderItem: React.FC<SliderItemType> = ({
-  bgcolor,
-  title,
-  TopChild,
+  firstName,
+  imgLink,
+  lastName,
 }: SliderItemType) => {
   return (
     <Box
@@ -23,12 +23,11 @@ export const SliderItem: React.FC<SliderItemType> = ({
         sx={{
           borderRadius: "10px",
           height: "152px",
-          backgroundColor: bgcolor,
+          border: "1px dashed rgba(0,0,0,0.5)",
+          background: `url(${imgLink}) no-repeat center center/cover`,
         }}
-      >
-        <TopChild />
-      </Box>
-      <Typography fontSize="17px">{title}</Typography>
+      ></Box>
+      <Typography fontSize="17px">{`${firstName} ${lastName}`}</Typography>
     </Box>
   );
 };

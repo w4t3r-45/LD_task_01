@@ -1,6 +1,6 @@
 import React from "react";
 import Slick from "react-slick";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Skeleton, useMediaQuery, useTheme, Box } from "@mui/material";
 import { SliderItem } from "../sharedComponents/sliderItem";
 import { SliderType } from "../../@types/sliderIRelatedTypes";
 import "slick-carousel/slick/slick.css";
@@ -27,13 +27,26 @@ export const Slider: React.FC<SliderType> = ({ data }: SliderType) => {
       }}
     >
       <Slick {...settings}>
-        {data.map((item) => (
-          <SliderItem
-            TopChild={item.TopChild}
-            bgcolor={item.bgcolor}
-            title={item.title}
-          />
-        ))}
+        {data
+          ? data.map((item) => (
+              <SliderItem
+                key={item.id}
+                imgLink={item.avatar}
+                firstName={item.first_name}
+                lastName={item.last_name}
+              />
+            ))
+          : ["", "", "", "", ""].map((item, index) => (
+              <Box key={`skeleton${index}`}>
+                <Skeleton
+                  variant="rectangular"
+                  width="152px"
+                  height="152px"
+                  sx={{ borderRadius: "10px", marginBottom: "12px" }}
+                />
+                <Skeleton variant="rectangular" width="152px" height="20px" />
+              </Box>
+            ))}
       </Slick>
     </div>
   );
