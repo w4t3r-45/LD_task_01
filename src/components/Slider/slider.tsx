@@ -40,8 +40,8 @@ export const Slider: React.FC<SliderType> = ({ data }: SliderType) => {
               <Box key={`skeleton${index}`}>
                 <Skeleton
                   variant="rectangular"
-                  width="152px"
-                  height="152px"
+                  width={152}
+                  height={152}
                   sx={{ borderRadius: "10px", marginBottom: "12px" }}
                 />
                 <Skeleton variant="rectangular" width="152px" height="20px" />
