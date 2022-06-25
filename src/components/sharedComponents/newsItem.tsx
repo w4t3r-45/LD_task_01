@@ -11,7 +11,12 @@ export const NewsItem: React.FC<NewsItemType> = ({
   return (
     <Box display="flex" margin={2} sx={{ width: "300px" }}>
       <img src={imgUrl} alt="news item image" width="100px" height="100px" />
-      <Box display="flex" flexDirection="column" marginLeft="16px">
+      <Box
+        display="flex"
+        flexDirection="column"
+        paddingLeft="16px"
+        sx={{ overflow: "hidden" }}
+      >
         <Typography
           fontWeight={500}
           fontSize="11px"
@@ -20,7 +25,7 @@ export const NewsItem: React.FC<NewsItemType> = ({
         >
           {category}
         </Typography>
-        <Typography fontWeight={500} fontSize="15px">
+        <Typography fontWeight={500} fontSize="15px" noWrap>
           {content}
         </Typography>
         <Link

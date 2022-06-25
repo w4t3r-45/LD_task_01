@@ -5,6 +5,7 @@ import {
   CardContent,
   Typography,
   CardActions,
+  useMediaQuery,
 } from "@mui/material";
 import { FilterMenu } from "../FilterMenu";
 import { BaseCardType } from "../../@types/baseCardType";
@@ -18,6 +19,8 @@ export const BaseCard: React.FC<BaseCardType> = ({
   style,
   headerLink,
 }: BaseCardType) => {
+  // mediaquery
+  const Mid = useMediaQuery("(max-width:1416px)");
   return (
     <Card
       sx={{
@@ -32,7 +35,7 @@ export const BaseCard: React.FC<BaseCardType> = ({
         avatar={HeaderIcon && <HeaderIcon />}
         title={
           title && (
-            <Typography fontSize="20px" fontWeight={500}>
+            <Typography fontSize={Mid ? "16px" : "20px"} fontWeight={500}>
               {title}
             </Typography>
           )
