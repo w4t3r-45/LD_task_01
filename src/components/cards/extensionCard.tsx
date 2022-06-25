@@ -30,6 +30,9 @@ export const ExtensionCard = () => {
     <BaseCard
       HeaderIcon={NewAppIcon}
       title="Extensions Marketplace"
+      style={{
+        height: "349px",
+      }}
       CardBody={
         <div
           style={{
