@@ -3,12 +3,12 @@ import { Box, IconButton, Divider } from "@mui/material";
 import { LOGO_PATH } from "../../helpers/iconsPaths";
 import { MenuIcon2 } from "../icons";
 import { SIDE_MENU_CONFIG } from "./SIDE_MENU_CONFIG";
-import { SideMenuType } from "../../@types/drawerRelatedTypes";
 import { SideMenuItem } from "./sidemenuItem";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
-// ############################################
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
+import { useDrawerContext } from "../../CONTEXT";
+import { useDrawerActions } from "../../CONTEXT/DrawerContext/actions";
 
 const drawerWidth = 255;
 
@@ -51,21 +51,21 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const handleDrwrStatus = (
-  open: boolean,
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  isDrwrOpened: boolean,
+  dispatch: any,
+  Drwr__set_open: any,
   showSubItems: boolean,
   setShowSubItems: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   showSubItems && setShowSubItems(!showSubItems);
-  setOpen(!open);
+  dispatch(Drwr__set_open(!isDrwrOpened));
 };
 
-// ############################################
+export const SideMenu: React.FC = () => {
+  // context state
+  const { isDrwrOpened, dispatch } = useDrawerContext();
+  const { Drwr__set_open } = useDrawerActions();
 
-export const SideMenu: React.FC<SideMenuType> = ({
-  open,
-  setOpen,
-}: SideMenuType) => {
   // set the selected item to map index "to change its color" (in reality we use route path and another indicator)
   const [selected, setSelected] = useState(0);
 
@@ -73,18 +73,24 @@ export const SideMenu: React.FC<SideMenuType> = ({
   const [showSubItems, setShowSubItems] = useState(false);
 
   return (
-    <Drawer variant="permanent" open={open}>
+    <Drawer variant="permanent" open={isDrwrOpened}>
       {/* drawer header */}
       <Box
         display="flex"
-        justifyContent={open ? "space-between" : "center"}
+        justifyContent={isDrwrOpened ? "space-between" : "center"}
         mb={4}
         sx={{ padding: "29px 20px 0 20px" }}
       >
-        {open && <img src={LOGO_PATH} alt="website logo" />}
+        {isDrwrOpened && <img src={LOGO_PATH} alt="website logo" />}
         <IconButton
           onClick={() =>
-            handleDrwrStatus(open, setOpen, showSubItems, setShowSubItems)
+            handleDrwrStatus(
+              isDrwrOpened,
+              dispatch,
+              Drwr__set_open,
+              showSubItems,
+              setShowSubItems
+            )
           }
           aria-label="close sidemenu"
           disableRipple
@@ -107,14 +113,12 @@ export const SideMenu: React.FC<SideMenuType> = ({
                 route={item.route}
                 childs={item.childs}
                 isSelected={selected === index}
-                isDrawerOpened={open}
-                setIsDrawerOpened={setOpen}
                 showSubItems={showSubItems}
                 setShowSubItems={setShowSubItems}
               />
             </div>
           )) ||
-          (item.isSelect && open && (
+          (item.isSelect && isDrwrOpened && (
             <Box key={`slctwrapr${index}`} style={{ marginTop: "60px" }}>
               <CustomSelect title={item.title} data={item.items} />
             </Box>

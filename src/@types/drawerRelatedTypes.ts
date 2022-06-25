@@ -9,8 +9,6 @@ export type SideMenuItemType = {
   badgeContent?: string | number;
   childs?: MIT_Child[];
   route?: string;
-  isDrawerOpened: boolean;
-  setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
   setShowSubItems: Dispatch<SetStateAction<boolean>>;
   showSubItems: boolean;
 };
@@ -18,9 +16,4 @@ export type SideMenuItemType = {
 type MIT_Child = {
   title: string;
   route?: string;
-};
-
-export type SideMenuType = {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
 };

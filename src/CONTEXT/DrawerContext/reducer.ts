@@ -2,7 +2,7 @@ import { DRWR__SET_OPEN } from "./constants";
 import { DrawerContextType } from "../../@types/DrawerContextType";
 
 export const INIT_STATE = {
-  isDrwrOpened: false,
+  isDrwrOpened: true,
   dispatch: () => {},
 };
 

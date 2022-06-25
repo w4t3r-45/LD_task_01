@@ -10,11 +10,11 @@ import {
   useTheme,
 } from "@mui/material";
 import { ElectricityIcon } from "../icons";
+import { useDrawerContext } from "../../CONTEXT";
 
-export const Header: React.FC<HeaderType> = ({
-  title,
-  isDrawerOpened,
-}: HeaderType) => {
+export const Header: React.FC<HeaderType> = ({ title }: HeaderType) => {
+  // get drawer context isopened value
+  const { isDrwrOpened } = useDrawerContext();
   // access MUI theme
   const theme = useTheme();
   return (
@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderType> = ({
         {/* this box is used to keep content beside Drawer not under it */}
         <Box
           sx={{
-            marginLeft: isDrawerOpened ? "250px" : "50px",
+            marginLeft: isDrwrOpened ? "250px" : "50px",
             transition: "all 200ms ease-out",
           }}
         />

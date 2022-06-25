@@ -4,18 +4,24 @@ import { SideMenu } from "../components/sidemenu";
 import { Header } from "../components/Header/header";
 import { DashboardWelcome } from "../components/DashboardWelcome/dashboardWelcome";
 import { CardsContainer } from "../components/CardsContainer/cardsContainer";
-import { ExtensionsContextProvider, NewsContextProvider } from "../CONTEXT";
+import {
+  ExtensionsContextProvider,
+  NewsContextProvider,
+  useDrawerContext,
+} from "../CONTEXT";
+import { useDrawerActions } from "../CONTEXT/DrawerContext/actions";
 
 export const Dashboard = () => {
-  const [open, setOpen] = useState(true);
+  const { Drwr__set_open } = useDrawerActions();
+  const { dispatch } = useDrawerContext();
   useEffect(() => {
-    setOpen(true);
+    dispatch(Drwr__set_open(true));
   }, []);
 
   return (
     <Box display="flex">
-      <SideMenu open={open} setOpen={setOpen} />
-      <Header title="Dashboard" isDrawerOpened={open} />
+      <SideMenu />
+      <Header title="Dashboard" />
       <Box
         sx={{
           display: "flex",

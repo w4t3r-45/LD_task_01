@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Badge, Typography, useTheme } from "@mui/material";
 import { SideMenuItemType } from "../../@types/drawerRelatedTypes";
 import { ARROW_DOWN_PATH, ARROW_UP_PATH } from "../../helpers/iconsPaths";
+import { useDrawerContext } from "../../CONTEXT";
+import { useDrawerActions } from "../../CONTEXT/DrawerContext/actions";
 
 export const SideMenuItem: React.FC<SideMenuItemType> = ({
   title,
@@ -11,15 +13,16 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
   childs,
   route,
   isSelected,
-  isDrawerOpened,
-  setIsDrawerOpened,
   setShowSubItems,
   showSubItems,
 }: SideMenuItemType) => {
+  // accessing drawer context
+  const { dispatch, isDrwrOpened } = useDrawerContext();
+  const { Drwr__set_open } = useDrawerActions();
   // accessing theme
   const theme = useTheme();
   const handleExpandSubItems = () => {
-    !isDrawerOpened && setIsDrawerOpened(true);
+    !isDrwrOpened && dispatch(Drwr__set_open(true));
     setShowSubItems(true);
     showSubItems && isSelected && setShowSubItems(false);
   };
@@ -52,7 +55,7 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
                 height: "20px",
               }}
             />
-            {isDrawerOpened && (
+            {isDrwrOpened && (
               <Typography
                 fontSize="14px"
                 sx={{
@@ -65,7 +68,7 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
             )}
           </Box>
           {/* last element : Icon || Badge */}
-          {(hasBadge && isDrawerOpened && (
+          {(hasBadge && isDrwrOpened && (
             <Badge
               badgeContent={badgeContent}
               color="success"
@@ -81,7 +84,7 @@ export const SideMenuItem: React.FC<SideMenuItemType> = ({
               }}
             />
           )) ||
-            (childs && isDrawerOpened && (
+            (childs && isDrwrOpened && (
               <img
                 src={
                   showSubItems && isSelected ? ARROW_UP_PATH : ARROW_DOWN_PATH
