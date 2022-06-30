@@ -23,7 +23,7 @@ npm start
 
 ### State Management
 
-- **useReducer + useDispatch** technique was used to manage state since we don't have too much to worry about , it definetly gives a performant state management for such apps (Nearly like redux)
+- **useReducer + Context API** technique was used to manage state since we don't have too much to worry about , it definetly gives a performant state management for such apps (Nearly like redux)
 - redux could be used for state management but it's not the right app to be in the used technique can handle some **small ~ mid** apps perfectly.
 
 ### Good Additions to have :
